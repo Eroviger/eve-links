@@ -272,18 +272,18 @@ function openCategory(categoria) {
     title.textContent = titulos[categoria];
     productsList.innerHTML = '';
     
-    // Agregar nota sobre disponibilidad de colores
-    const notaColores = document.createElement('div');
-    notaColores.className = 'color-note';
-    notaColores.innerHTML = '💡 <strong>Nota:</strong> Los colores mostrados son de referencia. Si no encuentras el que buscas, ¡pregúntanos! Tenemos más variedad disponible.';
-    productsList.appendChild(notaColores);
-    
-    // Cargar productos de la categoría
+    // Verificar si hay productos
     if (!productos[categoria] || productos[categoria].length === 0) {
         productsList.innerHTML = '<p style="text-align: center; color: #666;">No hay productos disponibles en esta categoría.</p>';
         modal.style.display = 'block';
         return;
     }
+    
+    // Agregar nota sobre disponibilidad de colores
+    const notaColores = document.createElement('div');
+    notaColores.className = 'color-note';
+    notaColores.innerHTML = '💡 <strong>Nota:</strong> Los colores mostrados son de referencia. Si no encuentras el que buscas, ¡pregúntanos! Tenemos más variedad disponible.';
+    productsList.appendChild(notaColores);
     
     // Cargar productos de la categoría
     productos[categoria].forEach(producto => {
