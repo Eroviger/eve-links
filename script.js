@@ -108,12 +108,12 @@ const productos = {
             descripcion: 'Moñas scrunchies en tamaño mini',
             colores: ['Azul', 'Morado'],
             tallas: [
-                { talla: 'Unidad', precio: 1000 },
+                { talla: 'Unidad', precio: 2000 },
                 { talla: 'Par (2x)', precio: 3000 }
             ],
             imagen: '🎀',
             imagenes: {
-                'Azul': './assets/images/productos/minimoñasscrunchiesazules.png',
+                'Azul': './assets/images/productos/miniñasscrunchiesazules.png',
                 'Morado': './assets/images/productos/minimoñasscrunchiesmoradas.png'
             }
         }
@@ -153,12 +153,96 @@ const productos = {
             id: 'toalla-microfibra',
             nombre: 'Toalla de Microfibra',
             descripcion: 'Toalla de microfibra para cabello, súper absorbente',
-            colores: ['Rosa', 'Lila', 'Blanco', 'Negro'],
+            colores: ['Rosa'],
             tallas: [
                 { talla: 'Única', precio: 10000 }
             ],
             imagen: '🧖‍♀️',
-            imagenes: {}
+            imagenes: {
+                'Rosa': './assets/images/productos/toalla.jpg'
+            }
+        }
+    ],
+    pijamas: [
+        {
+            id: 'pijama-azul',
+            nombre: 'Pijama Azul',
+            descripcion: 'Pijama cómoda + moña + diadema para maquillarse',
+            colores: ['Azul'],
+            tallas: [
+                { talla: 'Única', precio: 30000 }
+            ],
+            imagen: '👚',
+            imagenes: {
+                'Azul': './assets/images/productos/pijamaazul.jpg'
+            },
+            imagenesModelo: {
+                'Azul': './assets/images/productos/modelopijamaazul.jpg'
+            }
+        },
+        {
+            id: 'pijama-cafe',
+            nombre: 'Pijama Café',
+            descripcion: 'Pijama cómoda + moña + diadema para maquillarse',
+            colores: ['Café'],
+            tallas: [
+                { talla: 'Única', precio: 30000 }
+            ],
+            imagen: '👚',
+            imagenes: {
+                'Café': './assets/images/productos/pijamacafe.jpg'
+            },
+            imagenesModelo: {
+                'Café': './assets/images/productos/modelopijamacafe.jpg'
+            }
+        },
+        {
+            id: 'pijama-corazones',
+            nombre: 'Pijama Corazones',
+            descripcion: 'Pijama cómoda + moña + diadema para maquillarse',
+            colores: ['Corazones'],
+            tallas: [
+                { talla: 'Única', precio: 30000 }
+            ],
+            imagen: '👚',
+            imagenes: {
+                'Corazones': './assets/images/productos/pijamacorazones.jpg'
+            },
+            imagenesModelo: {
+                'Corazones': './assets/images/productos/modelopijamacorazones.jpg'
+            }
+        },
+        {
+            id: 'pijama-roja',
+            nombre: 'Pijama Roja',
+            descripcion: 'Pijama cómoda + moña + diadema para maquillarse',
+            colores: ['Rojo'],
+            tallas: [
+                { talla: 'Única', precio: 30000 }
+            ],
+            imagen: '👚',
+            imagenes: {
+                'Rojo': './assets/images/productos/pijamaroja.jpg'
+            },
+            imagenesModelo: {
+                'Rojo': './assets/images/productos/modelopijamarojo.jpg'
+            }
+        },
+        {
+            id: 'pijama-rosada',
+            nombre: 'Pijama Rosada',
+            descripcion: 'Pijama cómoda + moña + diadema para maquillarse',
+            colores: ['Rosado'],
+            tallas: [
+                { talla: 'Única', precio: 30000 }
+            ],
+            imagen: '👚',
+            imagenes: {
+                'Rosado': './assets/images/productos/pijamarosada.jpg'
+            },
+            imagenesModelo: {
+                'Rosado': './assets/images/productos/modelopijamarosado.jpg'
+            }
         }
     ]
 };
@@ -181,11 +265,18 @@ function openCategory(categoria) {
         monas: '🎀 Moñas Decorativas',
         scrunchies: '💫 Moñas Scrunchies',
         rizadores: '✨ Rizadores Sin Calor',
-        cuidado: '🧴 Cuidado Personal'
+        cuidado: '🧴 Cuidado Personal',
+        pijamas: '👚 Pijamas'
     };
     
     title.textContent = titulos[categoria];
     productsList.innerHTML = '';
+    
+    // Agregar nota sobre disponibilidad de colores
+    const notaColores = document.createElement('div');
+    notaColores.className = 'color-note';
+    notaColores.innerHTML = '💡 <strong>Nota:</strong> Los colores mostrados son de referencia. Si no encuentras el que buscas, ¡pregúntanos! Tenemos más variedad disponible.';
+    productsList.appendChild(notaColores);
     
     // Cargar productos de la categoría
     if (!productos[categoria] || productos[categoria].length === 0) {
@@ -210,9 +301,21 @@ function openCategory(categoria) {
         // Determinar imagen a mostrar (primera imagen disponible o emoji)
         const primerColor = producto.colores[0];
         const tieneImagen = producto.imagenes && producto.imagenes[primerColor];
-        const imagenHTML = tieneImagen
-            ? `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-card-img">`
-            : producto.imagen;
+        const tieneImagenModelo = producto.imagenesModelo && producto.imagenesModelo[primerColor];
+        
+        let imagenHTML;
+        if (tieneImagen && tieneImagenModelo) {
+            // Para pijamas: carousel con imagen producto y modelo
+            imagenHTML = `
+                <div class="product-carousel" data-producto="${producto.imagenes[primerColor]}" data-modelo="${producto.imagenesModelo[primerColor]}">
+                    <img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-card-img carousel-img">
+                </div>
+            `;
+        } else if (tieneImagen) {
+            imagenHTML = `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-card-img">`;
+        } else {
+            imagenHTML = producto.imagen;
+        }
         
         productCard.innerHTML = `
             <div class="product-image">${imagenHTML}</div>
@@ -227,6 +330,9 @@ function openCategory(categoria) {
         `;
         productsList.appendChild(productCard);
     });
+    
+    // Iniciar rotación de imágenes para pijamas
+    initCarousels();
     
     modal.style.display = 'block';
 }
@@ -341,6 +447,8 @@ function getColorCode(color) {
         'Vinotinto': '#722F37',
         'Amarillo': '#FFE66D',
         'Beige': '#F5DEB3',
+        'Café': '#8B4513',
+        'Corazones': 'linear-gradient(135deg, #FFB6D9, #FF6B9D)',
         'Multicolor': 'linear-gradient(135deg, #FFB6D9, #D4C5E8, #87CEEB)',
         'Mix': 'linear-gradient(135deg, #FFB6D9, #D4C5E8)'
     };
@@ -562,8 +670,48 @@ window.onclick = function(event) {
     
     if (event.target === catalogModal) {
         catalogModal.style.display = 'none';
+        stopCarousels();
     }
     if (event.target === cartModal) {
-        cartModal.style. display = 'none';
+        cartModal.style.display = 'none';
     }
+}
+
+// ========================================
+// CAROUSEL DE IMÁGENES PARA PIJAMAS
+// ========================================
+let carouselIntervals = [];
+
+function initCarousels() {
+    // Limpiar intervalos anteriores
+    stopCarousels();
+    
+    const carousels = document.querySelectorAll('.product-carousel');
+    
+    carousels.forEach(carousel => {
+        const img = carousel.querySelector('.carousel-img');
+        const productoSrc = carousel.dataset.producto;
+        const modeloSrc = carousel.dataset.modelo;
+        let showingProducto = true;
+        
+        const interval = setInterval(() => {
+            img.style.opacity = '0';
+            setTimeout(() => {
+                if (showingProducto) {
+                    img.src = modeloSrc;
+                } else {
+                    img.src = productoSrc;
+                }
+                showingProducto = !showingProducto;
+                img.style.opacity = '1';
+            }, 300);
+        }, 3000);
+        
+        carouselIntervals.push(interval);
+    });
+}
+
+function stopCarousels() {
+    carouselIntervals.forEach(interval => clearInterval(interval));
+    carouselIntervals = [];
 }
