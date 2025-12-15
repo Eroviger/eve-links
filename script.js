@@ -1,0 +1,569 @@
+// ========================================
+// BASE DE DATOS DE PRODUCTOS
+// ========================================
+const productos = {
+    gorros: [
+        {
+            id: 'gorro-ajustable',
+            nombre: 'Gorro de Satín - Cinta Ajustable',
+            descripcion: 'Gorro de satín con cinta ajustable, ideal para dormir',
+            colores: ['Rosado', 'Negro', 'Azul'],
+            tallas: [
+                { talla: 'M', precio: 14000 },
+                { talla: 'L', precio: 15000 }
+            ],
+            imagen: '🌸',
+            imagenes: {
+                'Rosado': './assets/images/productos/gorrosatinajustablerosado.png',
+                'Negro': './assets/images/productos/gorrosatinajustablenegro.jpg',
+                'Azul': './assets/images/productos/gorrosatinajustableazul.png'
+            }
+        },
+        {
+            id: 'gorro-satin',
+            nombre: 'Gorro de Satín',
+            descripcion: 'Gorro de satín clásico para proteger tu cabello',
+            colores: ['Azul', 'Rosado', 'Negro'],
+            tallas: [
+                { talla: 'M', precio: 13000 },
+                { talla: 'L', precio: 14000 }
+            ],
+            imagen: '🌸',
+            imagenes: {
+                'Rosado': './assets/images/productos/gorrodesatinrosado.jpg',
+                'Negro': './assets/images/productos/gorrosatinnegro.png',
+                'Azul': './assets/images/productos/gorrosatinazul.png'
+            }
+        }
+    ],
+    monas: [
+        {
+            id: 'mona-tulipan',
+            nombre: 'Moña Tulipán',
+            descripcion: 'Moña decorativa con diseño de tulipán',
+            colores: ['Amarillo', 'Azul', 'Rosado', 'Vinotinto'],
+            tallas: [
+                { talla: 'Única', precio: 5500 }
+            ],
+            imagen: '🌷',
+            imagenes: {
+                'Amarillo': './assets/images/productos/moñatulipanamarrillo.png',
+                'Azul': './assets/images/productos/moñatulipanazulceleste.png',
+                'Rosado': './assets/images/productos/moñatulipanrosado.png',
+                'Vinotinto': './assets/images/productos/moñatulipanrojo.png'
+            }
+        },
+        {
+            id: 'mona-mini-tulipan',
+            nombre: 'Moña Mini Tulipán',
+            descripcion: 'Moña tulipán versión mini',
+            colores: ['Amarillo', 'Azul', 'Rosado', 'Vinotinto'],
+            tallas: [
+                { talla: 'Única', precio: 3500 }
+            ],
+            imagen: '🌸',
+            imagenes: {
+                'Amarillo': './assets/images/productos/minitulipanamarrillo.jpg',
+                'Azul': './assets/images/productos/minitulipanazul.jpg',
+                'Rosado': './assets/images/productos/minitulipanesrosado.png',
+                'Vinotinto': './assets/images/productos/minitulipanvinotinto.jpg'
+            }
+        },
+        {
+            id: 'mona-cherry',
+            nombre: 'Moña Cherry',
+            descripcion: 'Moña decorativa con diseño de cerezas',
+            colores: ['Rojo'],
+            tallas: [
+                { talla: 'Única', precio: 5500 }
+            ],
+            imagen: '🍒',
+            imagenes: {
+                'Rojo': './assets/images/productos/Moñascherrys.jpg'
+            }
+        }
+    ],
+    scrunchies: [
+        {
+            id: 'scrunchie-normal',
+            nombre: 'Moñas Scrunchies',
+            descripcion: 'Moña scrunchie clásica en varios tamaños',
+            colores: ['Azul', 'Morado', 'Beige', 'Rojo'],
+            tallas: [
+                { talla: 'S', precio: 3000 },
+                { talla: 'M', precio: 4000 },
+                { talla: 'L', precio: 5000 }
+            ],
+            imagen: '🎀',
+            imagenes: {
+                'Azul': './assets/images/productos/moña scrunchie azul.png',
+                'Morado': './assets/images/productos/moña scrunchie morada.png',
+                'Beige': './assets/images/productos/moña scrunchie beige.png',
+                'Rojo': './assets/images/productos/moña scrunchie roja.png'
+            }
+        },
+        {
+            id: 'mini-monas',
+            nombre: 'Mini Moñas Scrunchies',
+            descripcion: 'Moñas scrunchies en tamaño mini',
+            colores: ['Azul', 'Morado'],
+            tallas: [
+                { talla: 'Unidad', precio: 1000 },
+                { talla: 'Par (2x)', precio: 3000 }
+            ],
+            imagen: '🎀',
+            imagenes: {
+                'Azul': './assets/images/productos/minimoñasscrunchiesazules.png',
+                'Morado': './assets/images/productos/minimoñasscrunchiesmoradas.png'
+            }
+        }
+    ],
+    rizadores: [
+        {
+            id: 'rizador-largo',
+            nombre: 'Rizador Sin Calor - Largo',
+            descripcion: 'Rizador largo para cabello largo, ondas perfectas',
+            colores: ['Rosado', 'Celeste'],
+            tallas: [
+                { talla: 'Único', precio: 16000 }
+            ],
+            imagen: '✨',
+            imagenes: {
+                'Rosado': './assets/images/productos/rizador rosado.png',
+                'Celeste': './assets/images/productos/rizadorceleste.jpeg'
+            }
+        },
+        {
+            id: 'rizador-corto',
+            nombre: 'Kit Rizador Sin Calor + Mini Gorrito',
+            descripcion: 'Rizador corto + mini gorrito de satín de regalo',
+            colores: ['Beige', 'Celeste'],
+            tallas: [
+                { talla: 'Único', precio: 10000 }
+            ],
+            imagen: '💫',
+            imagenes: {
+                'Beige': './assets/images/productos/kit beige rizador.png',
+                'Celeste': './assets/images/productos/kit rizador celeste.png'
+            }
+        }
+    ],
+    cuidado: [
+        {
+            id: 'toalla-microfibra',
+            nombre: 'Toalla de Microfibra',
+            descripcion: 'Toalla de microfibra para cabello, súper absorbente',
+            colores: ['Rosa', 'Lila', 'Blanco', 'Negro'],
+            tallas: [
+                { talla: 'Única', precio: 10000 }
+            ],
+            imagen: '🧖‍♀️',
+            imagenes: {}
+        }
+    ]
+};
+
+// ========================================
+// CARRITO DE COMPRAS
+// ========================================
+let carrito = [];
+
+// ========================================
+// ABRIR CATEGORÍA
+// ========================================
+function openCategory(categoria) {
+    const modal = document.getElementById('catalog-modal');
+    const title = document.getElementById('category-title');
+    const productsList = document.getElementById('products-list');
+    
+    const titulos = {
+        gorros: '🌸 Gorros de Satín',
+        monas: '🎀 Moñas Decorativas',
+        scrunchies: '💫 Moñas Scrunchies',
+        rizadores: '✨ Rizadores Sin Calor',
+        cuidado: '🧴 Cuidado Personal'
+    };
+    
+    title.textContent = titulos[categoria];
+    productsList.innerHTML = '';
+    
+    // Cargar productos de la categoría
+    if (!productos[categoria] || productos[categoria].length === 0) {
+        productsList.innerHTML = '<p style="text-align: center; color: #666;">No hay productos disponibles en esta categoría.</p>';
+        modal.style.display = 'block';
+        return;
+    }
+    
+    // Cargar productos de la categoría
+    productos[categoria].forEach(producto => {
+        const productCard = document.createElement('div');
+        productCard.className = 'product-item';
+        
+        // Mostrar rango de precios
+        const precios = producto.tallas.map(t => t.precio);
+        const precioMin = Math.min(...precios);
+        const precioMax = Math.max(...precios);
+        const precioTexto = precioMin === precioMax 
+            ? `$${precioMin.toLocaleString()}`
+            : `$${precioMin.toLocaleString()} - $${precioMax.toLocaleString()}`;
+        
+        // Determinar imagen a mostrar (primera imagen disponible o emoji)
+        const primerColor = producto.colores[0];
+        const tieneImagen = producto.imagenes && producto.imagenes[primerColor];
+        const imagenHTML = tieneImagen
+            ? `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-card-img">`
+            : producto.imagen;
+        
+        productCard.innerHTML = `
+            <div class="product-image">${imagenHTML}</div>
+            <div class="product-info">
+                <div class="product-name">${producto.nombre}</div>
+                <div class="product-description">${producto.descripcion}</div>
+                <div class="product-price">${precioTexto}</div>
+                <button class="add-to-cart-btn" onclick='showProductOptions(${JSON.stringify(producto).replace(/'/g, "&apos;")})'>
+                    Ver Opciones 🛒
+                </button>
+            </div>
+        `;
+        productsList.appendChild(productCard);
+    });
+    
+    modal.style.display = 'block';
+}
+
+// ========================================
+// MOSTRAR OPCIONES DEL PRODUCTO (TALLA Y COLOR)
+// ========================================
+function showProductOptions(producto) {
+    const modal = document.getElementById('catalog-modal');
+    const title = document.getElementById('category-title');
+    const productsList = document.getElementById('products-list');
+    
+    title.innerHTML = `← <span onclick="history.back()" style="cursor: pointer;">Volver</span>`;
+    productsList.innerHTML = '';
+    
+    const optionsCard = document.createElement('div');
+    optionsCard.className = 'product-options-card';
+    
+    let tallasHTML = '';
+    producto.tallas.forEach((t, index) => {
+        tallasHTML += `
+            <label class="option-label">
+                <input type="radio" name="talla" value="${index}" ${index === 0 ? 'checked' : ''}>
+                <span class="option-text">
+                    <strong>Talla ${t.talla}</strong> - $${t.precio.toLocaleString()}
+                </span>
+            </label>
+        `;
+    });
+    
+    let coloresHTML = '';
+    // Guardar imágenes en variable global para acceder desde el evento
+    window.currentProductImages = producto.imagenes || {};
+    
+    producto.colores.forEach((color, index) => {
+        coloresHTML += `
+            <label class="color-option">
+                <input type="radio" name="color" value="${color}" ${index === 0 ? 'checked' : ''} onchange="updateProductImage('${color}')">
+                <span class="color-box" style="background: ${getColorCode(color)}"></span>
+                <span>${color}</span>
+            </label>
+        `;
+    });
+    
+    // Determinar imagen inicial
+    const primerColor = producto.colores[0];
+    const imagenInicial = (producto.imagenes && producto.imagenes[primerColor]) 
+        ? `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-detail-img" id="product-image">`
+        : `<div class="product-detail-image" id="product-image">${producto.imagen}</div>`;
+    
+    optionsCard.innerHTML = `
+        <div class="product-detail">
+            ${imagenInicial}
+            <h3>${producto.nombre}</h3>
+            <p class="product-detail-description">${producto.descripcion}</p>
+            
+            <div class="options-section">
+                <h4>Selecciona la talla:</h4>
+                <div class="tallas-options">
+                    ${tallasHTML}
+                </div>
+            </div>
+            
+            <div class="options-section">
+                <h4>Selecciona el color:</h4>
+                <div class="colores-options">
+                    ${coloresHTML}
+                </div>
+            </div>
+            
+            <button class="add-to-cart-btn-large" onclick='addToCartWithOptions(${JSON.stringify(producto).replace(/'/g, "&apos;")})'>
+                Agregar al Carrito 🛒
+            </button>
+        </div>
+    `;
+    
+    productsList.appendChild(optionsCard);
+}
+
+// ========================================
+// ACTUALIZAR IMAGEN DEL PRODUCTO SEGÚN COLOR
+// ========================================
+function updateProductImage(color) {
+    const productImage = document.getElementById('product-image');
+    const imagenes = window.currentProductImages;
+    
+    if (productImage && imagenes && imagenes[color]) {
+        // Si es una imagen, actualizar src; si es emoji, reemplazar con imagen
+        if (productImage.tagName === 'IMG') {
+            productImage.src = imagenes[color];
+            productImage.alt = `Producto en ${color}`;
+        } else {
+            productImage.outerHTML = `<img src="${imagenes[color]}" alt="Producto en ${color}" class="product-detail-img" id="product-image">`;
+        }
+    }
+}
+
+// ========================================
+// OBTENER CÓDIGO DE COLOR
+// ========================================
+function getColorCode(color) {
+    const colores = {
+        'Rosa': '#FFB6D9',
+        'Rosado': '#FFB6D9',
+        'Lila': '#D4C5E8',
+        'Morado': '#9B7EBD',
+        'Negro': '#2C2C2C',
+        'Blanco': '#FFFFFF',
+        'Azul': '#87CEEB',
+        'Celeste': '#87CEEB',
+        'Rojo': '#FF6B9D',
+        'Vinotinto': '#722F37',
+        'Amarillo': '#FFE66D',
+        'Beige': '#F5DEB3',
+        'Multicolor': 'linear-gradient(135deg, #FFB6D9, #D4C5E8, #87CEEB)',
+        'Mix': 'linear-gradient(135deg, #FFB6D9, #D4C5E8)'
+    };
+    return colores[color] || '#D4C5E8';
+}
+
+// ========================================
+// AGREGAR AL CARRITO CON OPCIONES
+// ========================================
+function addToCartWithOptions(producto) {
+    const tallaIndex = document.querySelector('input[name="talla"]:checked').value;
+    const color = document.querySelector('input[name="color"]:checked').value;
+    
+    const tallaSeleccionada = producto.tallas[tallaIndex];
+    
+    const productoConOpciones = {
+        id:  `${producto.id}-${tallaSeleccionada.talla}-${color}`,
+        nombre: producto.nombre,
+        talla: tallaSeleccionada.talla,
+        color: color,
+        precio: tallaSeleccionada.precio,
+        cantidad: 1
+    };
+    
+    const existente = carrito.find(item => item.id === productoConOpciones.id);
+    
+    if (existente) {
+        existente.cantidad++;
+    } else {
+        carrito.push(productoConOpciones);
+    }
+    
+    updateCartUI();
+    showNotification('✅ Producto agregado al carrito');
+    closeModal();
+}
+
+// ========================================
+// CERRAR MODAL
+// ========================================
+function closeModal() {
+    document.getElementById('catalog-modal').style.display = 'none';
+}
+
+// ========================================
+// ACTUALIZAR UI DEL CARRITO
+// ========================================
+function updateCartUI() {
+    const cartCount = document.getElementById('cart-count');
+    const totalItems = carrito.reduce((sum, item) => sum + item.cantidad, 0);
+    cartCount.textContent = totalItems;
+    
+    const cartButton = document.querySelector('.cart-button');
+    cartButton.style.transform = 'scale(1. 2)';
+    setTimeout(() => {
+        cartButton. style.transform = 'scale(1)';
+    }, 200);
+}
+
+// ========================================
+// MOSTRAR/OCULTAR CARRITO
+// ========================================
+function toggleCart() {
+    const modal = document.getElementById('cart-modal');
+    const cartItems = document.getElementById('cart-items');
+    const cartTotal = document.getElementById('cart-total');
+    
+    if (modal.style.display === 'block') {
+        modal.style. display = 'none';
+        return;
+    }
+    
+    cartItems.innerHTML = '';
+    
+    if (carrito.length === 0) {
+        cartItems.innerHTML = `
+            <div class="empty-cart">
+                <div class="empty-cart-icon">🛒</div>
+                <p>Tu carrito está vacío</p>
+                <p style="font-size: 0.9rem; color: #999;">Agrega productos para empezar</p>
+            </div>
+        `;
+        cartTotal.textContent = '0';
+        modal.style.display = 'block';
+        return;
+    }
+    
+    let total = 0;
+    
+    carrito.forEach((item, index) => {
+        const subtotal = item.precio * item.cantidad;
+        total += subtotal;
+        
+        const cartItem = document.createElement('div');
+        cartItem.className = 'cart-item';
+        cartItem.innerHTML = `
+            <div class="cart-item-info">
+                <div class="cart-item-name">${item.nombre}</div>
+                <div class="cart-item-details">Talla: ${item.talla} • Color: ${item.color}</div>
+                <div class="cart-item-details">$${item.precio.toLocaleString()} c/u • Subtotal: $${subtotal.toLocaleString()}</div>
+            </div>
+            <div class="cart-item-quantity">
+                <button class="qty-btn" onclick="changeQuantity(${index}, -1)">−</button>
+                <span style="font-weight: bold; min-width: 25px; text-align: center;">${item.cantidad}</span>
+                <button class="qty-btn" onclick="changeQuantity(${index}, 1)">+</button>
+            </div>
+            <button class="remove-item" onclick="removeItem(${index})">🗑️</button>
+        `;
+        cartItems.appendChild(cartItem);
+    });
+    
+    cartTotal.textContent = total.toLocaleString();
+    modal.style.display = 'block';
+}
+
+// ========================================
+// CAMBIAR CANTIDAD
+// ========================================
+function changeQuantity(index, change) {
+    carrito[index].cantidad += change;
+    
+    if (carrito[index]. cantidad <= 0) {
+        carrito.splice(index, 1);
+    }
+    
+    updateCartUI();
+    toggleCart();
+    toggleCart();
+}
+
+// ========================================
+// ELIMINAR ITEM
+// ========================================
+function removeItem(index) {
+    carrito.splice(index, 1);
+    updateCartUI();
+    toggleCart();
+    toggleCart();
+}
+
+// ========================================
+// VACIAR CARRITO
+// ========================================
+function clearCart() {
+    if (confirm('¿Estás segura de vaciar el carrito?')) {
+        carrito = [];
+        updateCartUI();
+        toggleCart();
+    }
+}
+
+// ========================================
+// CHECKOUT (ENVIAR A WHATSAPP)
+// ========================================
+function checkout() {
+    if (carrito.length === 0) {
+        alert('Tu carrito está vacío');
+        return;
+    }
+    
+    let mensaje = '¡Hola Eve!   💜 Me gustaría comprar:%0A%0A';
+    let total = 0;
+    
+    carrito.forEach(item => {
+        const subtotal = item.precio * item.cantidad;
+        total += subtotal;
+        mensaje += `• ${item.cantidad}x ${item.nombre}%0A`;
+        mensaje += `  Talla: ${item.talla} | Color: ${item.color}%0A`;
+        mensaje += `  Precio: $${item.precio.toLocaleString()} c/u%0A`;
+        mensaje += `  Subtotal: $${subtotal.toLocaleString()}%0A%0A`;
+    });
+    
+    mensaje += `✨ *TOTAL: $${total.toLocaleString()}*%0A%0A`;
+    mensaje += '¿Cuál es el método de pago y envío?  🌸';
+    
+    const whatsappURL = `https://wa.me/573143924269?text=${mensaje}`;
+    window.open(whatsappURL, '_blank');
+    
+    if (confirm('¿Deseas vaciar el carrito? ')) {
+        carrito = [];
+        updateCartUI();
+        toggleCart();
+    }
+}
+
+// ========================================
+// NOTIFICACIÓN
+// ========================================
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: linear-gradient(135deg, #9B7EBD 0%, #D4AF37 100%);
+        color: white;
+        padding: 15px 25px;
+        border-radius:  50px;
+        box-shadow: 0 4px 20px rgba(155, 126, 189, 0.4);
+        z-index: 3000;
+        font-weight: 600;
+        animation: slideInRight 0.5s ease;
+    `;
+    notification.textContent = message;
+    document. body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'slideOutRight 0.5s ease';
+        setTimeout(() => notification.remove(), 500);
+    }, 3000);
+}
+
+// ========================================
+// CERRAR MODAL AL HACER CLIC FUERA
+// ========================================
+window.onclick = function(event) {
+    const catalogModal = document.getElementById('catalog-modal');
+    const cartModal = document.getElementById('cart-modal');
+    
+    if (event.target === catalogModal) {
+        catalogModal.style.display = 'none';
+    }
+    if (event.target === cartModal) {
+        cartModal.style. display = 'none';
+    }
+}

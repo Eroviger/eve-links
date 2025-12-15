@@ -1,0 +1,1124 @@
+/* ========================================
+   IMPORTAR FUENTES ELEGANTES
+======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ========================================
+   VARIABLES DE COLOR (basadas en el logo)
+======================================== */
+:root {
+    --primary:  #9B7EBD;
+    --primary-light: #D4C5E8;
+    --accent: #D4AF37;
+    --background: #FFF8F0;
+    --text-dark: #2C2C2C;
+    --white: #FFFFFF;
+    --shadow: rgba(155, 126, 189, 0.2);
+}
+
+/* ========================================
+   RESET Y CONFIGURACIÓN GENERAL
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background:  var(--background);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* ========================================
+   FONDO CON FLORES ANIMADAS
+======================================== */
+.background-flowers {
+    position: fixed;
+    top:  0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 20%, var(--primary-light) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, var(--primary-light) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(212, 175, 55, 0.1) 0%, transparent 40%);
+    animation: floatFlowers 20s ease-in-out infinite;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+@keyframes floatFlowers {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+}
+
+/* ========================================
+   CONTENEDOR PRINCIPAL
+======================================== */
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* ========================================
+   LOGO
+======================================== */
+.logo-container {
+    text-align:  center;
+    margin-bottom:  20px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    box-shadow: 0 10px 40px var(--shadow);
+    transition: transform 0.3s ease;
+    border: 4px solid var(--white);
+}
+
+.logo:hover {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* ========================================
+   TÍTULO Y ESLOGAN
+======================================== */
+.brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.tagline {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+    font-style: italic;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--primary);
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* ========================================
+   BOTONES DE LINKS
+======================================== */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 24px;
+    background: var(--white);
+    border: 2px solid var(--primary-light);
+    border-radius:  50px;
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 1s ease-out both;
+}
+
+.link-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.link-btn:hover::before {
+    left: 100%;
+}
+
+.link-btn:hover {
+    transform:  translateY(-3px);
+    box-shadow: 0 8px 25px var(--shadow);
+    border-color: var(--primary);
+}
+
+.link-btn .icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.link-btn:hover .icon {
+    transform: scale(1.2);
+}
+
+/* Colores específicos por red social */
+.whatsapp {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: var(--white);
+    border-color: #25D366;
+    animation-delay: 0.8s;
+}
+
+.instagram {
+    background: linear-gradient(135deg, #E1306C 0%, #C13584 50%, #833AB4 100%);
+    color: var(--white);
+    border-color: #E1306C;
+    animation-delay: 1s;
+}
+
+.facebook {
+    background: linear-gradient(135deg, #1877F2 0%, #0E5BBE 100%);
+    color: var(--white);
+    border-color: #1877F2;
+    animation-delay: 1.2s;
+}
+
+.tiktok {
+    background: linear-gradient(135deg, #000000 0%, #EE1D52 50%, #69C9D0 100%);
+    color: var(--white);
+    border-color: #EE1D52;
+    animation-delay: 1.4s;
+}
+
+.catalog {
+    background: linear-gradient(135deg, var(--accent) 0%, #B8860B 100%);
+    color: var(--white);
+    border-color: var(--accent);
+    animation-delay: 1.6s;
+}
+
+/* Clase para ocultar botones no utilizados */
+.hidden {
+    display: none;
+}
+
+/* ========================================
+   SECCIÓN DE PRODUCTOS
+======================================== */
+.products-section {
+    margin-bottom:  40px;
+    animation: fadeInUp 1s ease-out 1.8s both;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.product-card {
+    background: var(--white);
+    border:  2px solid var(--primary-light);
+    border-radius: 20px;
+    padding: 25px 15px;
+    text-align:  center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.product-card:hover {
+    transform: translateY(-5px) rotate(2deg);
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.product-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.product-card:nth-child(1) .product-icon { animation-delay: 0s; }
+.product-card:nth-child(2) .product-icon { animation-delay: 0.2s; }
+.product-card:nth-child(3) .product-icon { animation-delay: 0.4s; }
+.product-card:nth-child(4) .product-icon { animation-delay: 0.6s; }
+.product-card:nth-child(5) .product-icon { animation-delay: 0.8s; }
+
+.product-card p {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--primary);
+    animation: fadeInUp 1s ease-out 2s both;
+}
+
+.footer p {
+    margin-bottom:  5px;
+    font-weight: 500;
+}
+
+.small-text {
+    font-size: 0.8rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+}
+
+/* ========================================
+   ANIMACIONES
+======================================== */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+@media (max-width: 480px) {
+    .brand-name {
+        font-size: 2.5rem;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .link-btn {
+        font-size: 0.9rem;
+        padding: 14px 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        padding: 60px 40px;
+    }
+    
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* ... (mantén todo el CSS anterior) ... */
+
+/* ========================================
+   CARRITO FLOTANTE
+======================================== */
+.cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 20px var(--shadow);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.cart-button:hover {
+    transform:  scale(1.1) rotate(10deg);
+    box-shadow: 0 6px 30px var(--shadow);
+}
+
+#cart-count {
+    position:  absolute;
+    top: -5px;
+    right: -5px;
+    background: #E1306C;
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius:  50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* ========================================
+   BOTÓN "VER CATÁLOGO"
+======================================== */
+.view-catalog {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: var(--primary);
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.product-card:hover .view-catalog {
+    opacity: 1;
+}
+
+.product-card {
+    cursor: pointer;
+}
+
+/* ========================================
+   MODAL
+======================================== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background:  var(--background);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius:  30px;
+    max-width:  900px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+}
+
+.cart-content {
+    max-width: 500px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size:  2rem;
+    font-weight: bold;
+    color:  var(--text-dark);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--primary-light);
+}
+
+.close-modal:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.modal-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 30px;
+    text-align:  center;
+}
+
+/* ========================================
+   GRID DE PRODUCTOS EN MODAL
+======================================== */
+.modal-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-item {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background: var(--primary-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    overflow: hidden;
+}
+
+.product-card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-item:hover .product-card-img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 15px;
+}
+
+.product-name {
+    font-weight: 600;
+    font-size:  1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.product-description {
+    font-size: 0.85rem;
+    color: #666;
+    margin-bottom:  10px;
+}
+
+.product-price {
+    font-size: 1.3rem;
+    font-weight:  bold;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding:  12px;
+    background:  linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor:  pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.add-to-cart-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* ========================================
+   CARRITO
+======================================== */
+.cart-items {
+    max-height:  400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    margin-bottom:  10px;
+    display:  flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px var(--shadow);
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+.cart-item-details {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 15px;
+}
+
+.qty-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    background: white;
+    color: var(--primary);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.qty-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.remove-item {
+    background: #E1306C;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius:  50%;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.remove-item:hover {
+    transform: scale(1.1);
+    background: #C13584;
+}
+
+.cart-total {
+    text-align:  center;
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin:  20px 0;
+    padding: 15px;
+    background: var(--primary-light);
+    border-radius: 15px;
+}
+
+.checkout-btn {
+    width:  100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.checkout-btn:hover {
+    transform:  scale(1.05);
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+}
+
+.clear-cart-btn {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    color: #E1306C;
+    border: 2px solid #E1306C;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor:  pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-cart-btn:hover {
+    background: #E1306C;
+    color:  white;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+}
+
+.empty-cart-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+/* ========================================
+   RESPONSIVE MODAL
+======================================== */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10% 20px;
+        padding: 20px;
+        max-height: 85vh;
+    }
+    
+    .modal-products-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .cart-button {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+/* Agregar al final del archivo CSS */
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+}
+/* ========================================
+   FLORES DECORATIVAS EN EL FONDO
+======================================== */
+.background-flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background);
+    z-index: -1;
+    opacity: 0.2;
+    overflow: hidden;
+}
+
+.background-flowers::before,
+.background-flowers::after {
+    content: '🌸';
+    position: absolute;
+    font-size: 80px;
+    animation: floatFlower1 12s ease-in-out infinite;
+}
+
+.background-flowers::before {
+    top: 8%;
+    left: 3%;
+    animation: floatFlower1 14s ease-in-out infinite, spinSlow 25s linear infinite;
+}
+
+.background-flowers::after {
+    content: '🌷';
+    bottom: 15%;
+    right: 8%;
+    font-size: 70px;
+    animation: floatFlower2 16s ease-in-out infinite, spinSlow 30s linear infinite reverse;
+}
+
+body::before {
+    content: '💐';
+    position: fixed;
+    top: 45%;
+    right: -20px;
+    font-size: 60px;
+    opacity: 0.15;
+    z-index: -1;
+    animation: floatFlower3 18s ease-in-out infinite, pulse 4s ease-in-out infinite;
+}
+
+body::after {
+    content: '🌺';
+    position: fixed;
+    bottom: 8%;
+    left: -15px;
+    font-size: 65px;
+    opacity: 0.15;
+    z-index: -1;
+    animation: floatFlower4 20s ease-in-out infinite, pulse 5s ease-in-out infinite 2s;
+}
+
+/* Animaciones variadas para las flores */
+@keyframes floatFlower1 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(30px, -20px) rotate(5deg); }
+    50% { transform: translate(15px, 25px) rotate(-3deg); }
+    75% { transform: translate(-20px, 10px) rotate(8deg); }
+}
+
+@keyframes floatFlower2 {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-25px, 30px) rotate(-8deg); }
+    66% { transform: translate(20px, -15px) rotate(5deg); }
+}
+
+@keyframes floatFlower3 {
+    0%, 100% { transform: translate(0, 0); }
+    20% { transform: translate(-15px, 25px); }
+    40% { transform: translate(10px, -20px); }
+    60% { transform: translate(-25px, -10px); }
+    80% { transform: translate(20px, 15px); }
+}
+
+@keyframes floatFlower4 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(25px, -30px) scale(1.05); }
+    50% { transform: translate(-10px, 20px) scale(0.95); }
+    75% { transform: translate(15px, 10px) scale(1.02); }
+}
+
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.15; transform: scale(1); }
+    50% { opacity: 0.25; transform: scale(1.1); }
+}
+
+/* ========================================
+   BOTÓN CARRITO CON NUEVO GRADIENTE
+======================================== */
+.cart-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6B9D 0%, #C13584 50%, #9B7EBD 100%);
+    border: 3px solid white;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 6px 25px rgba(255, 107, 157, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-button:hover {
+    transform: scale(1.15) rotate(-10deg);
+    box-shadow: 0 8px 35px rgba(255, 107, 157, 0.6);
+}
+
+/* ========================================
+   BOTONES DE AGREGAR AL CARRITO
+======================================== */
+.add-to-cart-btn,
+.add-to-cart-btn-large {
+    width: 100%;
+    padding:  12px;
+    background: linear-gradient(135deg, #FF6B9D 0%, #C13584 50%, #9B7EBD 100%);
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    box-shadow:  0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.add-to-cart-btn:hover,
+.add-to-cart-btn-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(255, 107, 157, 0.5);
+    background: linear-gradient(135deg, #FF8AB5 0%, #D14D9A 50%, #B396D4 100%);
+}
+
+.add-to-cart-btn-large {
+    padding: 16px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+/* ========================================
+   TARJETA DE OPCIONES DEL PRODUCTO
+======================================== */
+.product-options-card {
+    background: white;
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow:  0 10px 40px var(--shadow);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.product-detail {
+    text-align: center;
+}
+
+.product-detail-image {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.product-detail-img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-detail-img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 35px var(--shadow);
+}
+
+.product-detail h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.product-detail-description {
+    font-size:  1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.options-section {
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.options-section h4 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+/* ========================================
+   OPCIONES DE TALLA
+======================================== */
+.tallas-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option-label {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: var(--primary-light);
+    border-radius:  15px;
+    cursor:  pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.option-label:hover {
+    background: var(--primary);
+    color: white;
+    border-color:  var(--accent);
+}
+
+.option-label input[type="radio"] {
+    margin-right: 12px;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.option-label input[type="radio"]:checked + .option-text {
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.option-label:has(input:checked) {
+    background: white;
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+/* ========================================
+   OPCIONES DE COLOR
+======================================== */
+.colores-options {
+    display:  grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    gap: 12px;
+}
+
+.color-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    border:  2px solid var(--primary-light);
+    border-radius:  15px;
+    cursor:  pointer;
+    transition: all 0.3s ease;
+}
+
+.color-option:hover {
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.color-option input[type="radio"] {
+    display: none;
+}
+
+.color-option:has(input:checked) {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    box-shadow: 0 4px 15px var(--shadow);
+}
+
+.color-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 8px;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.color-option span:last-child {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+/* ========================================
+   ICONOS EN BOTONES DE REDES SOCIALES
+======================================== */
+.whatsapp .icon {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.instagram .icon {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* ========================================
+   RESPONSIVE OPCIONES
+======================================== */
+@media (max-width: 480px) {
+    .product-options-card {
+        padding: 20px;
+    }
+    
+    .product-detail-image {
+        font-size:  4rem;
+    }
+    
+    .colores-options {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    body::before,
+    body::after {
+        display: none;
+    }
+}
