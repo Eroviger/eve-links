@@ -254,7 +254,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 8000 }
             ],
-            imagen: '💄',
+            imagen: './assets/images/productos/labialbeauty.jpg',
             imagenes: {}
         },
         {
@@ -265,7 +265,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 5500 }
             ],
-            imagen: '🍑',
+            imagen: './assets/images/productos/peachgloss.jpg',
             imagenes: {}
         },
         {
@@ -276,7 +276,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 6000 }
             ],
-            imagen: '🔑',
+            imagen: './assets/images/productos/lipgloss.jpg',
             imagenes: {}
         },
         {
@@ -287,7 +287,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 3500 }
             ],
-            imagen: '🍓',
+            imagen: './assets/images/productos/labialfresita.jpg',
             imagenes: {}
         },
         {
@@ -298,7 +298,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 8000 }
             ],
-            imagen: '✨',
+            imagen: './assets/images/productos/brillolabial.jpg',
             imagenes: {}
         },
         {
@@ -309,7 +309,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 6000 }
             ],
-            imagen: '💋',
+            imagen: './assets/images/productos/covermultiusos.jpg',
             imagenes: {}
         },
         {
@@ -320,7 +320,7 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 5000 }
             ],
-            imagen: '💕',
+            imagen: './assets/images/productos/glosskissing.jpg',
             imagenes: {}
         },
         {
@@ -331,7 +331,22 @@ const productos = {
             tallas: [
                 { talla: 'Única', precio: 8000 }
             ],
-            imagen: '🩷',
+            imagen: './assets/images/productos/ruborgelatinavinotinto.jpg',
+            imagenes: {
+                'Vinotinto': './assets/images/productos/ruborgelatinavinotinto.jpg',
+                'Rojo': './assets/images/productos/ruborgelatinarojo.jpg',
+                'Morado Oscuro': './assets/images/productos/ruborgelatinamoradooscuro.jpg'
+            }
+        },
+        {
+            id: 'rubor-corazon',
+            nombre: 'Rubor con Aplicador de Corazón',
+            descripcion: 'Rubor con adorable aplicador en forma de corazón',
+            colores: [],
+            tallas: [
+                { talla: 'Única', precio: 10000 }
+            ],
+            imagen: './assets/images/productos/ruborconaplicadordecorazon.jpg',
             imagenes: {}
         }
     ]
