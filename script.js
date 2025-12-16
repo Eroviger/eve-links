@@ -341,11 +341,13 @@ const productos = {
 // CARRITO DE COMPRAS
 // ========================================
 let carrito = [];
+let currentCategory = null; // Guardar categoría actual para el botón volver
 
 // ========================================
 // ABRIR CATEGORÍA
 // ========================================
 function openCategory(categoria) {
+    currentCategory = categoria; // Guardar la categoría actual
     const modal = document.getElementById('catalog-modal');
     const title = document.getElementById('category-title');
     const productsList = document.getElementById('products-list');
@@ -429,6 +431,15 @@ function openCategory(categoria) {
 }
 
 // ========================================
+// VOLVER A LA CATEGORÍA DESDE OPCIONES DE PRODUCTO
+// ========================================
+function goBackToCategory() {
+    if (currentCategory) {
+        openCategory(currentCategory);
+    }
+}
+
+// ========================================
 // MOSTRAR OPCIONES DEL PRODUCTO (TALLA Y COLOR)
 // ========================================
 function showProductOptions(producto) {
@@ -436,7 +447,7 @@ function showProductOptions(producto) {
     const title = document.getElementById('category-title');
     const productsList = document.getElementById('products-list');
     
-    title.innerHTML = `← <span onclick="history.back()" style="cursor: pointer;">Volver</span>`;
+    title.innerHTML = `← <span onclick="goBackToCategory()" style="cursor: pointer;">Volver</span>`;
     productsList.innerHTML = '';
     
     const optionsCard = document.createElement('div');
