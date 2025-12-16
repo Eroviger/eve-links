@@ -410,6 +410,7 @@ function openCategory(categoria) {
         const primerColor = producto.colores[0];
         const tieneImagen = producto.imagenes && producto.imagenes[primerColor];
         const tieneImagenModelo = producto.imagenesModelo && producto.imagenesModelo[primerColor];
+        const esRutaImagen = producto.imagen && producto.imagen.startsWith('./');
         
         let imagenHTML;
         if (tieneImagen && tieneImagenModelo) {
@@ -421,6 +422,9 @@ function openCategory(categoria) {
             `;
         } else if (tieneImagen) {
             imagenHTML = `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-card-img">`;
+        } else if (esRutaImagen) {
+            // Producto con imagen directa (sin variantes de color)
+            imagenHTML = `<img src="${producto.imagen}" alt="${producto.nombre}" class="product-card-img">`;
         } else {
             imagenHTML = producto.imagen;
         }
@@ -496,9 +500,16 @@ function showProductOptions(producto) {
     
     // Determinar imagen inicial
     const primerColor = producto.colores[0];
-    const imagenInicial = (producto.imagenes && producto.imagenes[primerColor]) 
-        ? `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-detail-img" id="product-image">`
-        : `<div class="product-detail-image" id="product-image">${producto.imagen}</div>`;
+    const esRutaImagen = producto.imagen && producto.imagen.startsWith('./');
+    let imagenInicial;
+    
+    if (producto.imagenes && producto.imagenes[primerColor]) {
+        imagenInicial = `<img src="${producto.imagenes[primerColor]}" alt="${producto.nombre}" class="product-detail-img" id="product-image">`;
+    } else if (esRutaImagen) {
+        imagenInicial = `<img src="${producto.imagen}" alt="${producto.nombre}" class="product-detail-img" id="product-image">`;
+    } else {
+        imagenInicial = `<div class="product-detail-image" id="product-image">${producto.imagen}</div>`;
+    }
     
     optionsCard.innerHTML = `
         <div class="product-detail">
