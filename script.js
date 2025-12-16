@@ -247,10 +247,10 @@ const productos = {
     ],
     maquillaje: [
         {
-            id: 'labial-liquido',
-            nombre: 'Labial Líquido Mate',
-            descripcion: 'Labial de larga duración con acabado mate',
-            colores: ['Rojo', 'Rosado', 'Nude', 'Coral'],
+            id: 'labial-beauty',
+            nombre: 'Labial Beauty',
+            descripcion: 'Labial de alta calidad con acabado perfecto',
+            colores: [],
             tallas: [
                 { talla: 'Única', precio: 8000 }
             ],
@@ -258,36 +258,80 @@ const productos = {
             imagenes: {}
         },
         {
-            id: 'paleta-sombras',
-            nombre: 'Paleta de Sombras',
-            descripcion: 'Paleta con 12 tonos para ojos',
-            colores: ['Nude', 'Colorida'],
+            id: 'peach-gloss',
+            nombre: 'Peach Gloss',
+            descripcion: 'Gloss con tono durazno natural',
+            colores: [],
             tallas: [
-                { talla: 'Única', precio: 25000 }
+                { talla: 'Única', precio: 5500 }
             ],
-            imagen: '🎨',
+            imagen: '🍑',
             imagenes: {}
         },
         {
-            id: 'rubor',
-            nombre: 'Rubor en Polvo',
-            descripcion: 'Rubor con acabado natural y suave',
-            colores: ['Rosado', 'Durazno', 'Coral'],
-            tallas: [
-                { talla: 'Única', precio: 12000 }
-            ],
-            imagen: '🪷',
-            imagenes: {}
-        },
-        {
-            id: 'gloss',
-            nombre: 'Gloss Labial',
-            descripcion: 'Brillo labial con efecto espejo',
-            colores: ['Transparente', 'Rosado', 'Rojo'],
+            id: 'llavero-lipgloss',
+            nombre: 'Llavero Lipgloss',
+            descripcion: 'Mini lipgloss portátil con llavero',
+            colores: [],
             tallas: [
                 { talla: 'Única', precio: 6000 }
             ],
+            imagen: '🔑',
+            imagenes: {}
+        },
+        {
+            id: 'labial-fresitas',
+            nombre: 'Labial de Fresitas',
+            descripcion: 'Labial con delicioso aroma a fresa',
+            colores: [],
+            tallas: [
+                { talla: 'Única', precio: 3500 }
+            ],
+            imagen: '🍓',
+            imagenes: {}
+        },
+        {
+            id: 'brillo-labial',
+            nombre: 'Brillo Labial',
+            descripcion: 'Brillo labial con efecto espejo',
+            colores: [],
+            tallas: [
+                { talla: 'Única', precio: 8000 }
+            ],
             imagen: '✨',
+            imagenes: {}
+        },
+        {
+            id: 'covet-multiusos',
+            nombre: 'Covet Multiusos',
+            descripcion: 'Producto versátil para labios y mejillas',
+            colores: [],
+            tallas: [
+                { talla: 'Única', precio: 6000 }
+            ],
+            imagen: '💋',
+            imagenes: {}
+        },
+        {
+            id: 'gloss-kissing',
+            nombre: 'Gloss Kissing',
+            descripcion: 'Gloss con acabado brillante y duradero',
+            colores: [],
+            tallas: [
+                { talla: 'Única', precio: 5000 }
+            ],
+            imagen: '💕',
+            imagenes: {}
+        },
+        {
+            id: 'rubor-gelatina',
+            nombre: 'Rubor en Gelatina',
+            descripcion: 'Rubor con textura de gelatina para un acabado natural',
+            colores: ['Vinotinto', 'Rojo', 'Morado Oscuro'],
+            tallas: [
+                { talla: 'Única', precio: 8000 }
+            ],
+            imagen: '🩷',
             imagenes: {}
         }
     ]
