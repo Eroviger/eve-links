@@ -63,10 +63,10 @@ const productos = {
             ],
             imagen: '🌸',
             imagenes: {
-                'Amarillo': './assets/images/productos/minitulipanamarrillo.jpg',
-                'Azul': './assets/images/productos/minitulipanazul.jpg',
+                'Amarillo': './assets/images/productos/minitulipanamarrillo.png',
+                'Azul': './assets/images/productos/minitulipanazul.png',
                 'Rosado': './assets/images/productos/minitulipanesrosado.png',
-                'Vinotinto': './assets/images/productos/minitulipanvinotinto.jpg'
+                'Vinotinto': './assets/images/productos/minitulipanvinotinto.png'
             }
         },
         {
@@ -113,7 +113,7 @@ const productos = {
             ],
             imagen: '🎀',
             imagenes: {
-                'Azul': './assets/images/productos/miniñasscrunchiesazules.png',
+                'Azul': './assets/images/productos/minimoñasscrunchiesazules.png',
                 'Morado': './assets/images/productos/minimoñasscrunchiesmoradas.png'
             }
         }
@@ -244,6 +244,52 @@ const productos = {
                 'Rosado': './assets/images/productos/modelopijamarosado.jpg'
             }
         }
+    ],
+    maquillaje: [
+        {
+            id: 'labial-liquido',
+            nombre: 'Labial Líquido Mate',
+            descripcion: 'Labial de larga duración con acabado mate',
+            colores: ['Rojo', 'Rosado', 'Nude', 'Coral'],
+            tallas: [
+                { talla: 'Única', precio: 8000 }
+            ],
+            imagen: '💄',
+            imagenes: {}
+        },
+        {
+            id: 'paleta-sombras',
+            nombre: 'Paleta de Sombras',
+            descripcion: 'Paleta con 12 tonos para ojos',
+            colores: ['Nude', 'Colorida'],
+            tallas: [
+                { talla: 'Única', precio: 25000 }
+            ],
+            imagen: '🎨',
+            imagenes: {}
+        },
+        {
+            id: 'rubor',
+            nombre: 'Rubor en Polvo',
+            descripcion: 'Rubor con acabado natural y suave',
+            colores: ['Rosado', 'Durazno', 'Coral'],
+            tallas: [
+                { talla: 'Única', precio: 12000 }
+            ],
+            imagen: '🪷',
+            imagenes: {}
+        },
+        {
+            id: 'gloss',
+            nombre: 'Gloss Labial',
+            descripcion: 'Brillo labial con efecto espejo',
+            colores: ['Transparente', 'Rosado', 'Rojo'],
+            tallas: [
+                { talla: 'Única', precio: 6000 }
+            ],
+            imagen: '✨',
+            imagenes: {}
+        }
     ]
 };
 
@@ -266,7 +312,8 @@ function openCategory(categoria) {
         scrunchies: '💫 Moñas Scrunchies',
         rizadores: '✨ Rizadores Sin Calor',
         cuidado: '🧴 Cuidado Personal',
-        pijamas: '👚 Pijamas'
+        pijamas: '👚 Pijamas',
+        maquillaje: '💄 Maquillaje'
     };
     
     title.textContent = titulos[categoria];
